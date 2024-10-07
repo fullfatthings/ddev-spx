@@ -1,0 +1,16 @@
+name: spx
+
+pre_install_actions:
+# Make sure we have a ddev version that can support what we do here
+- |
+  #ddev-nodisplay
+  #ddev-description:Checking DDEV version
+  (ddev debug capabilities | grep ddev-get-yaml-interpolation >/dev/null) || (echo "Please upgrade DDEV to v1.21.4+ for appropriate capabilities" && false)
+
+# List of files and directories listed that are copied into project .ddev directory.
+project_files:
+- web-build/pre.Dockerfile.spx
+- web-build/enable_spx
+- web-build/disable_spx
+- commands/web/spx
+- php/99-spx.ini

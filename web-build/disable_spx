@@ -1,0 +1,7 @@
+#!/bin/bash
+#ddev-generated
+phpdismod spx
+
+killall -USR2 php-fpm 2>/dev/null || true
+
+echo "Disabled SPX"
