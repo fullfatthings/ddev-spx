@@ -1,4 +1,4 @@
-# SPX for DDEV
+# DDEV SPX
 
 - Run `ddev get fullfatthings/ddev-spx`
 - Run `ddev restart` - this should install the addons into pph
