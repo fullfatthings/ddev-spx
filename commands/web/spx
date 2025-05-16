@@ -21,16 +21,16 @@ off | false | disable)
   disable_spx
   ;;
 toggle)
-  status=$(php -m | grep 'spx')
-  if [ "${status}" = "spx" ]; then
+  status=$(php -m | grep -i 'spx')
+  if [ ! -z "${status}" ]; then
     disable_spx
   else
     enable_spx
   fi
   ;;
 status)
-  status=$(php -m | grep 'spx')
-  if [ "${status}" = "spx" ]; then
+  status=$(php -m | grep -i 'spx')
+  if [ ! -z "${status}" ]; then
     result="spx is enabled"
   else
     result="spx is disabled"
